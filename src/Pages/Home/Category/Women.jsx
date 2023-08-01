@@ -10,16 +10,19 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 
 import { addcartfunc } from "../../../Reusable/addcartfunc";
 import UseAddTocart from "../../../Api/UseAddTocart";
+import Swal from "sweetalert2";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Women = () => {
     const { user } = useContext(AuthContext);
     const [data, isLoading] = useDataApi();
     const [, refetch] = UseAddTocart();
-
-
+    const navigate = useNavigate();
+    const location = useLocation()
 
 
     const handleAddtoCart = (product) => {
+        if(user){
         const producId = product._id;
         delete product._id;
         const products = {
@@ -43,7 +46,26 @@ const Women = () => {
 
         addcartfunc(productPostInfo,refetch)
 
+    }else{
+        Swal.fire({
+            title: 'if you select this course please login',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Login'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              
+               navigate("/sighinin",{state:{from:location}})
+              
+            }
+          })
     }
+}
+
+    
 
 
     if (isLoading) {
