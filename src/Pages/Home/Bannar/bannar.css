@@ -1,0 +1,15 @@
+
+.animate-item {
+    transition: transform 0.3s ease;
+    padding: 10px;
+   background-color: #fd7e14;
+   text-shadow: 0cap;
+   
+   
+  }
+  
+  .animate-item:hover {
+    transform: translateY(-5px);
+    background-blend-mode: color-burn;
+  }
+  

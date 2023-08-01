@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Michael Davis",
+        "img": "https://img.freepik.com/free-photo/cute-woman-travelling-through-forest_23-2147835322.jpg?w=1380&t=st=1690802709~exp=1690803309~hmac=dd9e8f12264801b18a603c13b9b0d6a07af9dfaf17a665d5343e34a997e89eba",
+        "feedbackTitle": "Beautiful Design",
+        "feedback": "The product's design is simply beautiful. It's even better in person than in the pictures. I'm thrilled with my purchase! I couldn't be happier with my new purchase."
+    },
+    {
+        "name": "Emma Williams",
+        "img": "https://img.freepik.com/free-photo/charming-black-haired-woman-with-happy-face-expression-posing-with-peace-sign-street_197531-6356.jpg?w=1380&t=st=1690802752~exp=1690803352~hmac=2e64a4499caaf4470b9ecedec81608234711da03b100a032a46b0a7a59501b23",
+        "feedbackTitle": "Great Customer Service",
+        "feedback": "I had an issue with my order, but the customer support team was very helpful and resolved it promptly. Thank you for your excellent service!"
+    },
+    {
+        "name": "Alice Johnson",
+        "img": "https://img.freepik.com/free-photo/portrait-smiling-blonde-woman_23-2148316635.jpg?w=826&t=st=1690802267~exp=1690802867~hmac=dea09e79f558d6e4674613daa8fa7171a09649a6eb10a3b955d8334cc9f8c641",
+        "feedbackTitle": "Impressive Quality",
+        "feedback": "The product I purchased exceeded my expectations! It's well-made and of excellent quality. I highly recommend it to others."
+    },
+    {
+        "name": "Bob Smith",
+        "img": "https://img.freepik.com/free-photo/young-sporty-woman-standing-pointing-opened-palm-high-quality-photo_2831-9623.jpg?w=1380&t=st=1690802301~exp=1690802901~hmac=76a428370f696105dea8dd4bc023be3e1c21e670732172365cdc7507832675e1",
+        "feedbackTitle": "Fast Shipping",
+        "feedback": "I was amazed by how fast the delivery was! I ordered the item yesterday, and it arrived today. Keep up the great work!"
+    },
+    {
+        "name": "Sophia Brown",
+        "img": "https://img.freepik.com/premium-photo/agreement-ok-concept-excited-young-woman-with-thumbs-up_100800-11001.jpg",
+        "feedbackTitle": "Perfect Fit",
+        "feedback": "The size guide was accurate, and the item fits perfectly! I couldn't be happier with my new purchase."
+    }
+]
