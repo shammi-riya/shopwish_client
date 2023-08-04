@@ -13,7 +13,7 @@ const Shopcart = () => {
  
 
   const handleIncress = (id) => {
-    axios.patch(`http://localhost:5000/increse-quinty/${id}`, {
+    axios.patch(` https://shopwish-surver-shammi-riya.vercel.app/increse-quinty/${id}`, {
 
       method: "PATCH",
       headers: {
@@ -31,7 +31,7 @@ const Shopcart = () => {
 
 
   const handleDecress = (id) => {
-    axios.patch(`http://localhost:5000/decres-quintity/${id}`, {
+    axios.patch(` https://shopwish-surver-shammi-riya.vercel.app/decres-quintity/${id}`, {
 
       method: "PATCH",
       headers: {

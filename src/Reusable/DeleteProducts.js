@@ -4,7 +4,7 @@ import { toast } from "react-hot-toast";
 
 const DeleteProducts = (id,refetch) => {
 console.log(id,'del');
-    axios.delete(`http://localhost:5000/singlepructs/${id}`, {
+    axios.delete(`https://shopwish-surver-shammi-riya.vercel.app/singlepructs/${id}`, {
       method: "DELETE"
     })
       .then(res => {
