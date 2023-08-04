@@ -6,6 +6,7 @@ import SiginIn from "../Component/SiginIn";
 import Shop from "../Pages/Home/Shop/Shop";
 import About from "../Pages/About/About";
 import Contucts from "../Pages/Contuct/Contucts";
+import Shopcart from "../Pages/Cart/Shopcart";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,11 @@ const router = createBrowserRouter([
           }
         ]
       },
+      {
+        path: "/cart",
+        element: <Shopcart></Shopcart>,
+      },
+
       
     ],
   },

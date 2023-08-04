@@ -4,7 +4,7 @@ import { useDataApi } from "../Api/useDataApi";
 const ProductPopup = () => {
     const [productPopUp, setProductPopUp] = useState(false);
     const [currentProductIndex, setCurrentProductIndex] = useState(0);
-    const data = useDataApi();
+    const [data] = useDataApi();
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -41,7 +41,7 @@ const ProductPopup = () => {
 
     return (
         <div style={{ height: "200px", width: "200px" }}>
-            <div className="card">
+            <div className="card d-flex">
                 <button
                     style={{
                         position: "absolute",
@@ -56,10 +56,10 @@ const ProductPopup = () => {
                 >
                     &times;
                 </button>
-                <img style={{ height: "100px" }} src={product.img} alt={product.name} />
+                <img style={{ height: "100px" }} src={product?.img} alt={product.img} />
                 <div style={{ color: "#fd7e14" }} className="card-body">
-                    <h5 className="card-title">{product.name}</h5>
-                    <p className="card-text">${product.price}</p>
+                    <h5 className="card-title">{product?.name}</h5>
+                    <p className="card-text">${product?.price}</p>
                 </div>
             </div>
         </div>

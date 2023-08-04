@@ -29,6 +29,7 @@ const Women = () => {
             _id: product._id,
             category: product?.category,
             name: product.name,
+            price: product.price,
             img: product.img,
             shipping: product?.shipping,
             ratingsCount: product?.ratingsCount,
@@ -48,7 +49,7 @@ const Women = () => {
 
     }else{
         Swal.fire({
-            title: 'if you select this course please login',
+            title: 'if you add any cart plz login',
             text: "You won't be able to revert this!",
             icon: 'warning',
             showCancelButton: true,
@@ -90,8 +91,8 @@ const Women = () => {
                         <img className="pic-1" src={product?.img} />
                     </a>
                     <ul className="product-links">
-                        <li><a href="#" data-tip="Add to Wishlist"><FaHeart></FaHeart></a></li>
-                        <li><a href="#" data-tip="Quick View"><FaEye></FaEye></a></li>
+                        <li><button href="#" data-tip="Add to Wishlist"><FaHeart></FaHeart></button></li>
+                        <li><button href="#" data-tip="Quick View"><FaEye></FaEye></button></li>
                         <li><button onClick={() => handleAddtoCart(product)}
                             href="" data-tip="Add to Cart"><FaCartPlus></FaCartPlus></button></li>
                     </ul>
@@ -114,7 +115,7 @@ const Women = () => {
 
 
     return (
-        <div className="container my-5 py-3">
+        <div className="container my-5 ">
             <div>
                 <Button>Women</Button>
             </div>

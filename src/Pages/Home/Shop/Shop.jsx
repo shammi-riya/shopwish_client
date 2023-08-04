@@ -3,17 +3,26 @@ import CatogoryItem from "../../../Component/CatogoryItem";
 import { FaCartPlus, FaEye, FaHeart, FaStar } from "react-icons/fa";
 import { Pagination } from "@mui/material";
 import { useDataApi } from "../../../Api/useDataApi";
-import { useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { SearchContext } from "../../../Provider/SearchProvider";
 import CustomModal from "../../../Component/Modal";
 import Loader from "../../../Component/Loader";
+import UseAddTocart from "../../../Api/UseAddTocart";
+import { AuthContext } from "../../../Provider/AuthProvider";
+import { addcartfunc } from "../../../Reusable/addcartfunc";
+import Swal from "sweetalert2";
 
 
 const Shop = () => {
     const [data, isLoading] = useDataApi();
     const [showModal, setShowModal] = useState(false);
     const [short, setShort] = useState('');
-    console.log(data);
+    const [, refetch] = UseAddTocart();
+    const navigate = useNavigate();
+    const location = useLocation();
+    const {user} = useContext(AuthContext)
+
+    
 
 
     
@@ -78,6 +87,67 @@ const Shop = () => {
     const displayProducts = dataa.slice(startIndex, endIndex);
 
 
+
+
+
+
+   
+
+    const handleAddtoCart = (product) => {
+        if(user){
+        const producId = product._id;
+        delete product._id;
+        const products = {
+            _id: product._id,
+            category: product?.category,
+            name: product.name,
+            img: product.img,
+            price: product.price,
+            shipping: product?.shipping,
+            ratingsCount: product?.ratingsCount,
+            stock: product.stock,
+            quantity: product?.quantity + 1
+        }
+
+        const productPostInfo = {
+            ...products,
+
+            producId,
+            pharsedBy: user.email
+        }
+
+
+        addcartfunc(productPostInfo,refetch)
+
+    }else{
+        Swal.fire({
+            title: 'if you add any cart plz login',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Login'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              
+               navigate("/sighinin",{state:{from:location}})
+              
+            }
+          })
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
     return (
         <div >
 
@@ -113,9 +183,9 @@ const Shop = () => {
                                                 <img className="pic-1" src={product?.img} />
                                             </a>
                                             <ul className="product-links">
-                                                <li><a href="#" data-tip="Add to Wishlist"><FaHeart></FaHeart></a></li>
-                                                <li><a href="#" data-tip="Quick View"><FaEye></FaEye></a></li>
-                                                <li><a href="" data-tip="Add to Cart"><FaCartPlus></FaCartPlus></a></li>
+                                                <li><button href="#" data-tip="Add to Wishlist"><FaHeart></FaHeart></button></li>
+                                                <li><button href="#" data-tip="Quick View"><FaEye></FaEye></button></li>
+                                                <li><button onClick={()=>handleAddtoCart(product)} href="" data-tip="Add to Cart"><FaCartPlus></FaCartPlus></button></li>
                                             </ul>
                                             <div className="price">${product.price}</div>
                                         </div>
