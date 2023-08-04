@@ -2,13 +2,13 @@ import { FaUser } from "react-icons/fa";
 import Sosallogin from "./Sosallogin";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
-import { useContext, useRef, useState } from "react";
+import { useContext, useRef } from "react";
 import { toast } from "react-hot-toast";
 import { auth } from "../Api/auth";
 
 
 const SiginIn = () => {
-    const [firebaseErr, setFirebaseErr] = useState('')
+   
     const {  sighinInUser, resetPassword } = useContext(AuthContext);
     const emailRef = useRef();
     const location = useLocation();
@@ -90,7 +90,7 @@ const SiginIn = () => {
                             className=" btn-block create-account mb-2">Sighin In</button>
                     </div>
                     <p className="fs-5  fw-semibold text-center my-3">You Are New To Website <Link to='/sighinup'><span style={{ color: '#fd7e14' }}>Sighin Up</span></Link></p>
-                    < p className="fs-5 text-danger text-center">{firebaseErr}</p>
+                  
                     <span className="">
 
 

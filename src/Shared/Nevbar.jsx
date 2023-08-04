@@ -51,7 +51,7 @@ const Nevbar = () => {
     <div>
       <Navbar expand="lg" className="bg-light py-3">
         <Container>
-          <Navbar.Brand href="#"><span className='fs-2 fw-bold'>ShopWish</span></Navbar.Brand>
+          <Navbar.Brand href="#"><Link to='/'><span className='fs-2 fw-bold'>ShopWish</span></Link></Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
 

@@ -1,5 +1,5 @@
 // categoriesData.js
-import { FaCamera, FaCapsules,  FaFemale,  FaHeadphones, FaJournalWhills, FaMale, FaMandalorian, FaMask, FaShare } from 'react-icons/fa';
+import { FaCamera, FaCapsules,  FaFemale,  FaHeadphones, FaJournalWhills, FaMale, FaMandalorian, FaMask } from 'react-icons/fa';
 import { CgCap } from 'react-icons/cg';
 import { BsBag } from 'react-icons/bs';
 import { BiLaptop } from 'react-icons/bi';
