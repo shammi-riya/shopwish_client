@@ -9,7 +9,7 @@ const Feedback = () => {
 const [feedback,setFeedback] = useState([])
 
     useEffect(() => {
-        fetch("/public/feedback.json")
+        fetch("https://shopwish-surver-shammi-riya.vercel.app/feedback")
           .then((res) => res.json())
           .then((data) => {
             setFeedback(data);
