@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { FaGithub, FaGoogle } from "react-icons/fa";
+import {  FaGoogle } from "react-icons/fa";
 
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
@@ -10,7 +10,7 @@ import { auth } from "../Api/auth";
 
 const Sosallogin = () => {
 
-    const { loading, user, createGogoolUser, createGithibUser } = useContext(AuthContext);
+    const {  createGogoolUser} = useContext(AuthContext);
     const navigate = useNavigate();
     const from = location?.state?.from?.pathname || '/'
 
@@ -36,7 +36,7 @@ const Sosallogin = () => {
                 <div className="social-icons d-flex gap-2 justify-content-center d-flex align-items-center">
                     <a style={{ background: '#fd7e14' }} onClick={handleGogoolSighin}
                         className="py-2 px-3 fs-2 text-white" href="#"><FaGoogle></FaGoogle></a>
-                    <a style={{ background: '#fd7e14' }} className="py-2 px-3 fs-2 text-white" href="#"><FaGithub></FaGithub></a>
+                    {/* <a style={{ background: '#fd7e14' }} className="py-2 px-3 fs-2 text-white" href="#"><FaGithub></FaGithub></a> */}
 
                 </div>
             </div>

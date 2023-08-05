@@ -1,16 +1,17 @@
 // Import the functions you need from the SDKs you need
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDEPGu_7n2P_2VAYWhkdKkTHDdaztydM8A",
-  authDomain: "shopwish-376a1.firebaseapp.com",
-  projectId: "shopwish-376a1",
-  storageBucket: "shopwish-376a1.appspot.com",
-  messagingSenderId: "1042437015891",
-  appId: "1:1042437015891:web:bfa08c73338547586cf9a6"
+  apiKey: "AIzaSyBCRUwQcKdNq4t-kebdIzU-Q47_zDsyoMM",
+  authDomain: "e-comarce-2d571.firebaseapp.com",
+  projectId: "e-comarce-2d571",
+  storageBucket: "e-comarce-2d571.appspot.com",
+  messagingSenderId: "875115919033",
+  appId: "1:875115919033:web:37ff8c8c23a53e509acd68"
 };
 
 // Initialize Firebase

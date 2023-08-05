@@ -19,14 +19,12 @@ const Nevbar = () => {
   const [data, refetch] = UseAddTocart();
 
   
+if(!data){
+  return;
+}
+  
 
-  if (!data) {
 
-    return 
-  }
-
-
-  console.log(data?.length);
   const handleSidebarToggle = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
@@ -51,7 +49,8 @@ const Nevbar = () => {
     <div>
       <Navbar expand="lg" className="bg-light py-3">
         <Container>
-          <Navbar.Brand href="#"><Link to='/'><span className='fs-2 fw-bold'>ShopWish</span></Link></Navbar.Brand>
+          <Navbar.Brand href="#"><Link style={{textDecoration: "none",
+  listStyle:" none",color:'#fd7e14',}} to='/'><span className='fs-2 fw-bold '>ShopWish</span></Link></Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
 
@@ -92,7 +91,7 @@ const Nevbar = () => {
                   onClick={handleSidebarToggle}
                 >
                   <span className=''><FaShoppingBag /></span><span style={{ color: '#fd7e14' }} className=' fs-3 position-absolute top-0 start-100 translate-middle '
-                  >{data.length || 0}</span>
+                  >{data&&data?.length || 0}</span>
                 </span>
               </Nav.Link>
 

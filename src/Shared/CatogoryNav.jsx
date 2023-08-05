@@ -21,11 +21,13 @@ const CatogoryNav = () => {
                                 Home
                             </Link>
                         </li>
-                        <li className="fs-5 px-2 fw-semibold">
+                      
+                        <li className="fs-5 fw-semibold">
                             <Link className="nav-link" to="/shop">
-                                Shop
+                               shop
                             </Link>
                         </li>
+                      
                        
                         <li className="fs-5 px-2 fw-semibold">
                             <Link to='/about' className="nav-link" href="#">

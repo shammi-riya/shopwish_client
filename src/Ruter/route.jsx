@@ -7,7 +7,7 @@ import Shop from "../Pages/Home/Shop/Shop";
 import About from "../Pages/About/About";
 import Contucts from "../Pages/Contuct/Contucts";
 import Shopcart from "../Pages/Cart/Shopcart";
-import Privetroute from "./Privetroute";
+
 
 const router = createBrowserRouter([
   {
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
 
       {
         path: "/shop",
-        element: <Privetroute><Shop></Shop></Privetroute>,
+        element: <Shop></Shop>,
 
         children: [
           {
