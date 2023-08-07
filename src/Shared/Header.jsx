@@ -7,25 +7,13 @@ import { BiUser } from 'react-icons/bi';
 
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
-import { useQuery } from '@tanstack/react-query';
-// import AddToCart from '../Api/addtocart';
+
+
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext)
 
-     
-
-
-
-
     
-
-
-
-
-
-
-
 
     const handleLogout = () => {
         logOut()

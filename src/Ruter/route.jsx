@@ -7,6 +7,7 @@ import Shop from "../Pages/Home/Shop/Shop";
 import About from "../Pages/About/About";
 import Contucts from "../Pages/Contuct/Contucts";
 import Shopcart from "../Pages/Cart/Shopcart";
+import Wishcart from "../Pages/Wishcart/Wishcart";
 
 
 const router = createBrowserRouter([
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <Shopcart></Shopcart>,
+      },
+      {
+        path: "/wishcart",
+        element: <Wishcart></Wishcart>,
       },
 
       

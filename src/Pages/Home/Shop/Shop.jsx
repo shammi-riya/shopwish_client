@@ -11,6 +11,9 @@ import UseAddTocart from "../../../Api/UseAddTocart";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import { addcartfunc } from "../../../Reusable/addcartfunc";
 import Swal from "sweetalert2";
+import addwishlist from "../../../Reusable/addwishlist";
+import UseGetWishlist from "../../../Api/UseGetWishlist";
+
 
 
 const Shop = () => {
@@ -18,15 +21,17 @@ const Shop = () => {
     const [showModal, setShowModal] = useState(false);
     const [short, setShort] = useState('');
     const [, refetch] = UseAddTocart();
+    const [wishlistdata, ref]= UseGetWishlist(); 
+   
     const navigate = useNavigate();
     const location = useLocation();
     const {user} = useContext(AuthContext)
-
+    
     
 
 
     
-
+// modal
     useEffect(() => {
         setShowModal(true);
     }, []);
@@ -141,7 +146,53 @@ const Shop = () => {
 
 
 
+const handleAddtoWishList = (product)=>{
 
+    if(user){
+        const producId = product._id;
+    delete product._id
+    const productsDetails = {
+        _id: product._id,
+        category: product?.category,
+        name: product.name,
+        img: product.img,
+        price: product.price,
+        shipping: product?.shipping,
+        ratingsCount: product?.ratingsCount,
+        stock: product.stock,
+        quantity: product.quantity+1
+    }
+
+    const productInfo ={
+        ...productsDetails,
+        producId,
+        pharsedBy: user?.email
+    }
+
+  addwishlist(productInfo,ref)
+
+
+    }
+    else{
+        Swal.fire({
+            title: 'if you add any cart plz login',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Login'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              
+               navigate("/sighinin",{state:{from:location}})
+              
+            }
+          })
+    }
+
+
+}
 
 
 
@@ -183,7 +234,7 @@ const Shop = () => {
                                                 <img className="pic-1" src={product?.img} />
                                             </a>
                                             <ul className="product-links">
-                                                <li><button href="#" data-tip="Add to Wishlist"><FaHeart></FaHeart></button></li>
+                                                <li><button onClick={()=>handleAddtoWishList(product)} href="#" data-tip="Add to Wishlist"><FaHeart></FaHeart></button></li>
                                                 <li><button href="#" data-tip="Quick View"><FaEye></FaEye></button></li>
                                                 <li><button onClick={()=>handleAddtoCart(product)} href="" data-tip="Add to Cart"><FaCartPlus></FaCartPlus></button></li>
                                             </ul>

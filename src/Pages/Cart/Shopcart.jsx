@@ -13,19 +13,18 @@ const Shopcart = () => {
  
 
   const handleIncress = (id) => {
-    axios.patch(`https://shopwish-surver-shammi-riya.vercel.app/increse-quinty/${id}`, {
-
-      method: "PATCH",
-      headers: {
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify({ id: id })
-    })
+    console.log(id);
+    axios.patch(`http://localhost:5000/increse-quinty/${id}`, { id: id })
       .then(res => {
-        res.data.modifiedCount && refetch()
+        if (res.data.modifiedCount) {
+          refetch();
+        }
       })
+      .catch(error => {
+        console.error('Error increasing quantity:', error);
+      });
   }
-
+  
   
 
 

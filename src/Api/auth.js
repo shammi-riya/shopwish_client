@@ -10,7 +10,7 @@ export const auth = (user) => {
     }
 
 
-    fetch(`https://shopwish-surver.vercel.app/user/${user?.email}`, {
+    fetch(`https://shopwish-surver-shammi-riya.vercel.app/user/${user?.email}`, {
         method: 'PUT',
         headers: {
             'content-type': 'application/json'

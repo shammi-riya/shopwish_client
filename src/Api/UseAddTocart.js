@@ -8,12 +8,13 @@ const UseAddTocart = () => {
     const { data, refetch } = useQuery({
         queryKey: ['my-cart', user?.email],
         queryFn: async () => {
-            const response = await fetch(`https://shopwish-surver.vercel.app/my-cart?email=${user?.email}`);
+            const response = await fetch(`https://shopwish-surver-shammi-riya.vercel.app/my-cart?email=${user?.email}`);
+           
             return response.json();
         },
     });
 
-
+console.log(data);
     return [data,refetch];
 
 

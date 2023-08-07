@@ -50,7 +50,7 @@ const AuthProvider = ({ children }) => {
             setUser(currentUser);
            
         // if(currentUser?.email){
-        //   fetch('https://shopwish-surver.vercel.app/jwt',{
+        //   fetch('https://shopwish-surver-shammi-riya.vercel.app/jwt',{
         //     method:"POST",
         //     headers:{
         //         'content-type':'application/json'

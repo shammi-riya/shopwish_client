@@ -8,7 +8,7 @@ export const useDataApi = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://shopwish-surver.vercel.app/products');
+        const response = await axios.get('https://shopwish-surver-shammi-riya.vercel.app/products');
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
