@@ -208,7 +208,7 @@ const handleAddtoWishList = (product)=>{
                         <CatogoryItem></CatogoryItem>
                     </div>
 
-                    <div className="w-75 row">
+                    <div className="w-100 row">
                         < div className="dropdown ml-auto">
                             <a style={{ background: '#fd7e14' }}
                                 className="btn btn-secondary dropdown-toggle border-0  px-5" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
@@ -227,8 +227,8 @@ const handleAddtoWishList = (product)=>{
                         </div>
                         {
                             displayProducts.map(product => <>
-                                <div className="product-grid gap-2 col-md-2 col-1  my-3 mx-2 col-lg-3 m-2 shadow">
-                                    <div className=" ">
+                                <div className="product-grid grid gap-2 col-md-2 col-1  my-3 mx-2 col-lg-3 m-2 shadow">
+                                    <div className=" w-100">
                                         <div className="product-image">
                                             <a href="#" className="image">
                                                 <img className="pic-1" src={product?.img} />

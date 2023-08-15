@@ -5,9 +5,13 @@ const Contucts = () => {
     const onSubmit = data => console.log(data);
 
     return (
-        <div className="container my-5">
-            <Title>Contact</Title>
-           <div className="d-flex gap-5 my-5">
+        <div className=" my-5">
+           <div className="container-fluid">
+           <Title><span className="border-style">Conta</span>ct</Title>
+           </div>
+          <div>
+         <div>
+             <div className="d-lg-flex flex-wrap gap-5 container my-5">
            <div className="w-100 ">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.39755436964!2d90.38119147609235!3d23.733198589435155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b84e57dd8b19%3A0xd66f294182e721e8!2sDhaka%20New%20Market!5e0!3m2!1sen!2sbd!4v1690818963238!5m2!1sen!2sbd"
@@ -15,7 +19,7 @@ const Contucts = () => {
                     height="380"
                     style={{ border: '0' }}
                     allowFullScreen
-                    loading="lazy"
+                   
                     referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
             </div>
@@ -33,7 +37,9 @@ const Contucts = () => {
                     <input style={{ background: '#fd7e14'}}  className="py-2 my-2 w-100 text-light" type="submit" value='send message'/>
                 </form>
             </div>
+         </div>
            </div>
+          </div>
 
 
 

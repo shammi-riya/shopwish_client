@@ -1,4 +1,34 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@200;300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    font-family: 'Josefin Slab', serif;
+
+    font-family: 'Poppins', sans-serif;
+
+
+}
+.active-nav {
+   
+    font-size: large;
+    background-color: #fd7e14;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    
+ }
+ 
+.navitem {
+    text-decoration: none;
+   
+    list-style: none;
+    padding: 12px 15px;
+    display: flex;
+    color: #484646;
+    justify-content: center;
+    align-items: center;
+
+   
+}
 /* Styles for the heart icon on larger devices */
 .navbar-toggler.fs-lg-4 {
     font-size: 1.5rem; 
@@ -21,12 +51,32 @@
     content: '';
     background-color: #fd7e14;
     height: 70px;
-    width: 70px;
+    width: 100%;
     border-radius: 50%;
     position: absolute;
     right: -25px;
     top: -25px;
 }
+/* Default styles for product grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* Responsive styles for product grid */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 576px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+}
+
 .product-grid .product-image a.image:after{
     height: 120px;
     width: 120px;
@@ -238,4 +288,8 @@
 .position{
     top: 0;
     left: 3;
+}
+
+.border-style{
+    border-bottom:4px solid #fd7e14;
 }

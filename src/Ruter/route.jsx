@@ -8,6 +8,9 @@ import About from "../Pages/About/About";
 import Contucts from "../Pages/Contuct/Contucts";
 import Shopcart from "../Pages/Cart/Shopcart";
 import Wishcart from "../Pages/Wishcart/Wishcart";
+import Blog from "../Pages/Blog/Blog";
+
+
 
 
 const router = createBrowserRouter([
@@ -23,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About/>,
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
       },
       {
         path: "/contuct",
