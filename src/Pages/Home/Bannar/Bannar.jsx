@@ -23,29 +23,33 @@ const Bannar = () => {
 
 
   return (
-    <div className='w-full  container'>
-      <div className=' d-flex gap-4'>
-      <div className='w-25'>
-      <CatogoryItem></CatogoryItem>
-      </div>
-        <div className=' w-75'>
-          <>
+    <div className='container'>
+      <div className='row '>
+        <div className='col-12 col-md-3 d-none d-md-block'>
+          <CatogoryItem />
+        </div>
+        <div className='col-12 col-md-9'>
           <Swiper
-        slidesPerView={1}
-        spaceBetween={30}
-        loop={true}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
-        modules={[Pagination, Navigation]}
-        className="mySwiper"
-            >
-              <SwiperSlide> <img style={{ height: '70vh' }} className='w-100 rounded' src={img1} alt="" /></SwiperSlide>
-              <SwiperSlide> <img style={{ height: '70vh' }} className='w-100 rounded' src={img2} alt="" /></SwiperSlide>
-              <SwiperSlide> <img style={{ height: '70vh' }} className='w-100 rounded' src={img3} alt="" /></SwiperSlide>
-            </Swiper>
-          </>
+            slidesPerView={1}
+            spaceBetween={30}
+            loop={true}
+            pagination={{
+              clickable: true,
+            }}
+            navigation={true}
+            modules={[Pagination, Navigation]}
+            className="mySwiper"
+          >
+            <SwiperSlide>
+              <img style={{ height: '70vh' }} className='w-100 rounded' src={img1} alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img style={{ height: '70vh' }} className='w-100 rounded' src={img2} alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img style={{ height: '70vh' }} className='w-100 rounded' src={img3} alt="" />
+            </SwiperSlide>
+          </Swiper>
         </div>
       </div>
 

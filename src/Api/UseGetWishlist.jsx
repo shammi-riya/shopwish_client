@@ -10,7 +10,7 @@ import { AuthContext } from "../Provider/AuthProvider";
         queryKey: ["my-wishlist", user?.email],
         queryFn: async () => {
             try {
-                const res = await fetch(`http://localhost:5000/my-wishlist?email=${user?.email}`);
+                const res = await fetch(`https://shopwish-surver-shammi-riya.vercel.app/my-wishlist?email=${user?.email}`);
                 return res.json();
             } catch (error) {
                 console.error("Error fetching wishlist data:", error);

@@ -14,7 +14,7 @@ const Shopcart = () => {
 
   const handleIncress = (id) => {
     console.log(id);
-    axios.patch(`http://localhost:5000/increse-quinty/${id}`, { id: id })
+    axios.patch(`https://shopwish-surver-shammi-riya.vercel.app/increse-quinty/${id}`, { id: id })
       .then(res => {
         if (res.data.modifiedCount) {
           refetch();

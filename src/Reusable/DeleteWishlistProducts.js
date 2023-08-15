@@ -5,7 +5,7 @@ const DeleteWishlistProducts = (id,ref) => {
 
 
 
-    axios.delete(`http://localhost:5000/singlepructsWislist/${id}`, {
+    axios.delete(`https://shopwish-surver-shammi-riya.vercel.app/singlepructsWislist/${id}`, {
         method: "DELETE"
       })
         .then(res => {

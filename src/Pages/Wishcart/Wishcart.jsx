@@ -17,7 +17,7 @@ const Wishcart = () => {
 
 
     const handleIncress = (id) => {
-        fetch(`http://localhost:5000/update-wish-quintity/${id}`, {
+        fetch(`https://shopwish-surver-shammi-riya.vercel.app/update-wish-quintity/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
@@ -33,7 +33,7 @@ const Wishcart = () => {
             })
     }
     const handleDecress = (id) => {
-        fetch(`http://localhost:5000/update-decres-wish-quintity/${id}`, {
+        fetch(`https://shopwish-surver-shammi-riya.vercel.app/update-decres-wish-quintity/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
@@ -58,7 +58,7 @@ const Wishcart = () => {
 
     const handleDeleteAll = () => {
         wishlistdata.forEach(product => {
-            fetch(`http://localhost:5000/multiple-pructsWislist/${product._id}`, {
+            fetch(`https://shopwish-surver-shammi-riya.vercel.app/multiple-pructsWislist/${product._id}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())

@@ -5,7 +5,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 const UseAddTocart = () => {
     const { user } = useContext(AuthContext);
   
-    const { data, refetch } = useQuery({
+    const { data=[], refetch } = useQuery({
         queryKey: ['my-cart', user?.email],
         queryFn: async () => {
             const response = await fetch(`https://shopwish-surver-shammi-riya.vercel.app/my-cart?email=${user?.email}`);

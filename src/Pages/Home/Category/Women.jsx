@@ -4,7 +4,7 @@ import { FaCartPlus, FaEye, FaHeart, FaStar } from "react-icons/fa";
 import 'react-alice-carousel/lib/alice-carousel.css';
 import Button from "../../../Component/Button";
 import Loader from "../../../Component/Loader";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
 
 import { addcartfunc } from "../../../Reusable/addcartfunc";
@@ -13,6 +13,8 @@ import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 import addwishlist from "../../../Reusable/addwishlist";
 import UseGetWishlist from "../../../Api/UseGetWishlist";
+// import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 
 const Women = () => {
     const { user } = useContext(AuthContext);
@@ -21,102 +23,118 @@ const Women = () => {
     const [, ref] = UseGetWishlist()
     const navigate = useNavigate();
     const location = useLocation()
+    
+
+
+
+   
+    
+
+
+
+
+
+
+
+
+
+
 
 
     const handleAddtoCart = (product) => {
-        if(user){
-        const producId = product._id;
-        delete product._id;
-        const products = {
-            _id: product._id,
-            category: product?.category,
-            name: product.name,
-            price: product.price,
-            img: product.img,
-            shipping: product?.shipping,
-            ratingsCount: product?.ratingsCount,
-            stock: product.stock,
-            quantity: product?.quantity + 1
+        if (user) {
+            const producId = product._id;
+            delete product._id;
+            const products = {
+                _id: product._id,
+                category: product?.category,
+                name: product.name,
+                price: product.price,
+                img: product.img,
+                shipping: product?.shipping,
+                ratingsCount: product?.ratingsCount,
+                stock: product.stock,
+                quantity: product?.quantity + 1
+            }
+
+            const productPostInfo = {
+                ...products,
+
+                producId,
+                pharsedBy: user.email
+            }
+
+
+            addcartfunc(productPostInfo, refetch)
+
+        } else {
+            Swal.fire({
+                title: 'if you add any cart plz login',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Login'
+            }).then((result) => {
+                if (result.isConfirmed) {
+
+                    navigate("/sighinin", { state: { from: location } })
+
+                }
+            })
+        }
+    }
+
+    const handleAddtoWishList = (product) => {
+
+        if (user) {
+            const producId = product._id;
+            delete product._id
+            const productsDetails = {
+                _id: product._id,
+                category: product?.category,
+                name: product.name,
+                img: product.img,
+                price: product.price,
+                shipping: product?.shipping,
+                ratingsCount: product?.ratingsCount,
+                stock: product.stock,
+                quantity: product.quantity + 1
+            }
+
+            const productInfo = {
+                ...productsDetails,
+                producId,
+                pharsedBy: user?.email
+            }
+
+            addwishlist(productInfo, ref)
+
+
+        }
+        else {
+            Swal.fire({
+                title: 'if you add any cart plz login',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Login'
+            }).then((result) => {
+                if (result.isConfirmed) {
+
+                    navigate("/sighinin", { state: { from: location } })
+
+                }
+            })
         }
 
-        const productPostInfo = {
-            ...products,
-
-            producId,
-            pharsedBy: user.email
-        }
-
-
-        addcartfunc(productPostInfo,refetch)
-
-    }else{
-        Swal.fire({
-            title: 'if you add any cart plz login',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Login'
-          }).then((result) => {
-            if (result.isConfirmed) {
-              
-               navigate("/sighinin",{state:{from:location}})
-              
-            }
-          })
-    }
-}
-
-const handleAddtoWishList = (product)=>{
-
-    if(user){
-        const producId = product._id;
-    delete product._id
-    const productsDetails = {
-        _id: product._id,
-        category: product?.category,
-        name: product.name,
-        img: product.img,
-        price: product.price,
-        shipping: product?.shipping,
-        ratingsCount: product?.ratingsCount,
-        stock: product.stock,
-        quantity: product.quantity +1
-    }
-
-    const productInfo ={
-        ...productsDetails,
-        producId,
-        pharsedBy: user?.email
-    }
-
-  addwishlist(productInfo,ref)
-
 
     }
-    else{
-        Swal.fire({
-            title: 'if you add any cart plz login',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Login'
-          }).then((result) => {
-            if (result.isConfirmed) {
-              
-               navigate("/sighinin",{state:{from:location}})
-              
-            }
-          })
-    }
 
 
-}
-
-    
 
 
     if (isLoading) {
@@ -124,7 +142,7 @@ const handleAddtoWishList = (product)=>{
     }
 
     const WomenData = data.filter(singledata => singledata.category == "Women's Shari")
-   
+
     const responsive = {
         0: { items: 1 },
         568: { items: 2 },
@@ -133,7 +151,7 @@ const handleAddtoWishList = (product)=>{
 
 
     const productsElemets = WomenData.map(product => <>
-        <div className="product-grid gap-3 m-2 d-flex shadow p-2 ">
+        <div className="product-grid gap-3 m-2 d-flex  shadow p-2 ">
             <div className=" ">
 
                 <div className="product-image">
@@ -141,8 +159,12 @@ const handleAddtoWishList = (product)=>{
                         <img className="pic-1" src={product?.img} />
                     </a>
                     <ul className="product-links">
-                        <li><button onClick={()=>handleAddtoWishList(product)}   data-tip="Add to Wishlist"><FaHeart></FaHeart></button></li>
-                        <li><button   data-tip="Quick View"><FaEye></FaEye></button></li>
+                        <li><button onClick={() => handleAddtoWishList(product)} data-tip="Add to Wishlist"><FaHeart></FaHeart></button></li>
+                        <li><button >
+                            <FaEye></FaEye>
+                        </button>
+
+                        </li>
                         <li><button onClick={() => handleAddtoCart(product)}
                             href="" data-tip="Add to Cart"><FaCartPlus></FaCartPlus></button></li>
                     </ul>
@@ -160,6 +182,10 @@ const handleAddtoWishList = (product)=>{
                 </div>
             </div>
         </div>
+
+
+
+
     </>)
 
 
@@ -177,6 +203,7 @@ const handleAddtoWishList = (product)=>{
                 controlsStrategy="alternate"
             />
 
+           
 
         </div>
 
