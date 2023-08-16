@@ -64,63 +64,65 @@ const Nevbar = () => {
 
 
           <div className="d-sm-none d-xs-none d-none d-lg-block d-md-lg w-100">
-          <Form
-            style={{ width: '70%' }} className="d-flex mx-auto ">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="mx-3 "
+            <Form
+              style={{ width: '70%' }} className="d-flex mx-auto ">
+              <Form.Control
+                type="search"
+                placeholder="Search"
+                className="mx-3 "
 
-              aria-label="Search"
+                aria-label="Search"
 
-            />
-            <Button
-              type='submit'
-              className='text-light fw-semibold fs-5'
-              style={{ background: '#fd7e14' }}
-              variant="">Search</Button>
+              />
+              <Button
+                type='submit'
+                className='text-light fw-semibold fs-5'
+                style={{ background: '#fd7e14' }}
+                variant="">Search</Button>
 
 
-          </Form>
+            </Form>
           </div>
 
           <nav className="d-flex gap-3 my-4">
-                    <NavLink>
-                        <span
-                            className={`navbar-toggler d-lg-block fs-lg-4 ${iswishlistSidebarOpen ? "active" : ""
-                                }`}
-                            data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasNavbar2"
-                            aria-controls="offcanvasNavbar2"
-                            aria-label="Toggle navigation"
-                            onClick={handleWishListSidebarToggle}
-                        >
-                           <span className="position-relative fs-4">
-                            <p><FaHeart></FaHeart></p>
-                            <span className="position-absolute top-0 end-0">{wishlistdata.length || "0"}</span>
-                            </span>
-                        </span>
-                    </NavLink>
-                    <NavLink>
-                        <span
-                            className={`navbar-toggler d-lg-block fs-lg-4 ${iswishlistSidebarOpen ? "active" : ""
-                                }`}
-                            data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasNavbar2"
-                            aria-controls="offcanvasNavbar2"
-                            aria-label="Toggle navigation"
-                            onClick={handlecartSidebarToggle}
-                        >
-                             <span className="position-relative fs-4">
-                            <p><FaShoppingBag></FaShoppingBag></p>
-                            <span className="position-absolute top-0 end-0">{data.length||"0"}</span>
-                        </span>
-                        </span>
+            <NavLink>
+              <span
+                className={`navbar-toggler d-lg-block fs-lg-4 ${isSidebarOpen ? 'active' : ''}`}
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar"
+                aria-label="Toggle navigation"
+                onClick={handlecartSidebarToggle}
+              >
+                <span className="position-relative fs-4">
+                  <FaShoppingBag />
+                  <span style={{background:"#fd7e14"}} className="position-absolute top-0 start-100 translate-middle badge rounded-pill ">
+                    {data.length || "0"}
+                  </span>
+                </span>
+              </span>
+            </NavLink>
+
+            <NavLink>
+              <span
+                className={`navbar-toggler posision d-lg-block fs-lg-4 ${iswishlistSidebarOpen ? 'active' : ''}`}
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar2"
+                aria-controls="offcanvasNavbar2"
+                aria-label="Toggle navigation"
+                onClick={handleWishListSidebarToggle}
+              >
+                <span className="position-relative fs-4">
+                  <FaHeart />
+                  <span style={{background:"#fd7e14"}} className="position-absolute top-0 start-100 translate-middle badge rounded-pill ">
+                    {wishlistdata.length || "0"}
+                  </span>
+                </span>
+              </span>
+            </NavLink>
 
 
-                    </NavLink>
-                   
-                </nav>
+          </nav>
 
 
 
