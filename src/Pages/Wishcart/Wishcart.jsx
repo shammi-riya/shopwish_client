@@ -2,15 +2,13 @@ import { FaTrash } from "react-icons/fa";
 import UseGetWishlist from "../../Api/UseGetWishlist";
 import DeleteWishlistProducts from "../../Reusable/DeleteWishlistProducts";
 import { toast } from "react-hot-toast";
-import { useContext } from "react";
-import { AuthContext } from "../../Provider/AuthProvider";
 
 
 const Wishcart = () => {
 
-    const [wishlistdata, ref, error] = UseGetWishlist()
+    const [wishlistdata, ref, ] = UseGetWishlist()
 
-    const { user } = useContext(AuthContext);
+
 
 
 

@@ -21,7 +21,7 @@ const Shop = () => {
     const [showModal, setShowModal] = useState(false);
     const [short, setShort] = useState('');
     const [, refetch] = UseAddTocart();
-    const [wishlistdata, ref]= UseGetWishlist(); 
+    const [, ref]= UseGetWishlist(); 
    
     const navigate = useNavigate();
     const location = useLocation();
