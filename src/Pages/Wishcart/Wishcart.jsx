@@ -6,13 +6,7 @@ import { toast } from "react-hot-toast";
 
 const Wishcart = () => {
 
-    const [wishlistdata, ref, ] = UseGetWishlist()
-
-
-
-
-
-
+    const [wishlistdata, ref, ] = UseGetWishlist();
 
     const handleIncress = (id) => {
         fetch(`https://shopwish-surver-shammi-riya.vercel.app/update-wish-quintity/${id}`, {

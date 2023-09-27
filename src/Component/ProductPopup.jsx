@@ -14,6 +14,8 @@ const ProductPopup = () => {
         return () => clearTimeout(timer);
     }, []);
 
+
+
     useEffect(() => {
         if (productPopUp) {
             const interval = setInterval(() => {
@@ -28,6 +30,8 @@ const ProductPopup = () => {
         }
     }, [productPopUp, currentProductIndex, data]);
 
+
+    
 
     if (!productPopUp || data.length === 0) {
         return null;

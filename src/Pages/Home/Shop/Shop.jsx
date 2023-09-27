@@ -93,11 +93,6 @@ const Shop = () => {
 
 
 
-
-
-
-   
-
     const handleAddtoCart = (product) => {
         if(user){
         const producId = product._id;

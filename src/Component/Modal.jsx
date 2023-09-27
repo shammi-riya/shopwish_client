@@ -1,4 +1,4 @@
-import React from "react"; // Make sure to import React
+
 import { Button, Modal as BootstrapModal } from "react-bootstrap";
 import img1 from '../assets/fashionable-woman-pink-coat-black-hat-posing.jpg';
 
@@ -6,7 +6,7 @@ const CustomModal = ({ CloseModal }) => {
 
  const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your form submission logic here
+    // Add form submission logic here
  }
 
     return (

@@ -24,6 +24,9 @@ const Offer = () => {
     }
 
 
+    
+    // fatch offer products data
+
     useEffect(() => {
         fetch('https://shopwish-surver-shammi-riya.vercel.app/offer-products')
             .then(res => res.json())
